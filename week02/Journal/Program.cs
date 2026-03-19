@@ -1,3 +1,15 @@
+/*
+ * Enhancement: Motivational Quotes Feature
+ * ----------------------------------------
+ * To encourage consistent journaling and help overcome common barriers 
+ * like lack of motivation, this program displays a random motivational 
+ * quote each time it starts. These quotes aim to inspire users to write 
+ * in their journal by providing positive reminders and encouragement.
+ *
+ * This feature goes beyond the core requirements by adding a user-friendly 
+ * element that supports engagement and habit-building in journaling.
+ */
+ 
 using System;
 
 class Program
@@ -5,64 +17,69 @@ class Program
     static void Main(string[] args)
     {
         Journal journal = new Journal();
-        PromptGenerator promptGenerator = new PromptGenerator();
+        MotivationalQuote quote = new MotivationalQuote();
 
-        int choice = 0;
+        Console.WriteLine("Welcome to your Journal!");
+        Console.WriteLine("Here's a motivational quote for you today:");
+        Console.WriteLine($"\"{quote.GetRandomQuote()}\"");
+        Console.WriteLine();
 
-        while (choice != 5)
+        int userChoice = 0;
+
+        while (userChoice != 5)
         {
-            Console.WriteLine("\nJournal Menu");
-            Console.WriteLine("1. Write new entry");
-            Console.WriteLine("2. Display journal");
-            Console.WriteLine("3. Save journal");
-            Console.WriteLine("4. Load journal");
+            Console.WriteLine("\nJournal Menu:");
+            Console.WriteLine("1. Write");
+            Console.WriteLine("2. Display");
+            Console.WriteLine("3. Save");
+            Console.WriteLine("4. Load");
             Console.WriteLine("5. Quit");
-            Console.WriteLine("Choose an option:");
+            Console.Write("Select an option: ");
 
-            choice = int.Parse(Console.ReadLine());
+            string choice = Console.ReadLine();
+            userChoice = int.Parse(choice);
 
-            if (choice == 1)
+            if (userChoice == 1)
             {
-                string prompt = promptGenerator.GetRandomPrompt();
-                Console.WriteLine("\nPrompt:");
-                Console.WriteLine(prompt);
+                PromptGenerator generator = new PromptGenerator();
+                string prompt = generator.GetRandomPrompt();
 
-                Console.Write("Your response:");
+                Console.WriteLine($"\nPrompt: {prompt}");
+                Console.Write("Your response: ");
                 string response = Console.ReadLine();
 
-                string date = DateTime.Now.ToShortDateString();
-
                 Entry entry = new Entry();
-                entry._date = date;
+                entry._date = DateTime.Now.ToShortDateString();
                 entry._promptText = prompt;
                 entry._entryText = response;
 
                 journal.AddEntry(entry);
             }
-            else if (choice == 2)
+            else if (userChoice == 2)
             {
+                Console.WriteLine("\nYour Journal Entries:");
                 journal.DisplayAll();
-
             }
-            else if (choice == 3 )
+            else if (userChoice == 3)
             {
-                Console.Write("Enter file name to save: ");
+                Console.Write("Enter filename to save to: ");
                 string filename = Console.ReadLine();
                 journal.SaveToFile(filename);
             }
-            else if (choice == 4)
+            else if (userChoice == 4)
             {
-                Console.Write("Enter Filename to load: ");
+                Console.Write("Enter filename to load from: ");
                 string filename = Console.ReadLine();
                 journal.LoadFromFile(filename);
-                
             }
-            else if (choice == 5)
+            else if (userChoice == 5)
             {
                 Console.WriteLine("Goodbye!");
             }
-
+            else
+            {
+                Console.WriteLine("Invalid choice. Please select a number from 1 to 5.");
+            }
         }
     }
-       
 }
