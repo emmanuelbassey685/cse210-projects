@@ -29,6 +29,7 @@ public class Order
 
         return cost;
     }
+    
     public double CalculateTotalCost()
     {
         double totalCost = 0;
@@ -53,4 +54,5 @@ public class Order
     {
         return _customer.CreateShippingLabel();
     }
+
 }

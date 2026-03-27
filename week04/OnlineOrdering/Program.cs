@@ -37,6 +37,6 @@ class Program
         Console.WriteLine($"Packing Label: {label2}");
         Console.WriteLine($"Shipping Label: {shipLabel2}");
         Console.WriteLine($"Total Price: {shoppingCost2}");
-
     }
+
 }

@@ -37,6 +37,6 @@ class Program
         {
             video.DisplayInfo();
         }
-    
+            
     }
 }

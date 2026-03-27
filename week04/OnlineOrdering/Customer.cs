@@ -1,6 +1,7 @@
 public class Customer
 {
     private string _name;
+    
     private Address _address;
 
     public Customer(string name, Address address)
@@ -13,8 +14,10 @@ public class Customer
     {
         return $"{_name} -- {_address.GetAddress()}";
     }
+
     public bool InUsa()
     {
         return _address.IsUsa();
     }
+
 }

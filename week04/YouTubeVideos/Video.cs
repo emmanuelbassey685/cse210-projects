@@ -34,6 +34,6 @@ public class Video
         }
 
         Console.WriteLine();
-    
+        
     }
 }
