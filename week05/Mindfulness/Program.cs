@@ -22,19 +22,19 @@ class Program
                 if (userInput == 1)
                 {
                     Console.Clear();
-                    BreathingActivity activity1 = new BreathingActivity("Breathing Activity", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.", 30);
+                    BreathingActivity activity1 = new BreathingActivity("Breathing Activity", "This activity is designed to help you relax by guiding you through slow, controlled breathing. As you follow each breath, allow your mind to clear and focus your attention fully on your breathing.", 30);
                     activity1.Run();
                 }
                 else if (userInput == 2)
                 {
                     Console.Clear();
-                    ReflectingActivity activity2 = new ReflectingActivity("Reflecting Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.", 30);
+                    ReflectingActivity activity2 = new ReflectingActivity("Reflecting Activity", "This activity is designed to help you reflect on moments in your life when you demonstrated strength and resilience. Through this reflection, you will gain a deeper awareness of your inner capabilities and how you can apply them to other areas of your life.", 30);
                     activity2.Run();
                 }
                 else if (userInput == 3)
                 {
                     Console.Clear();
-                    ListingActivity activity3 = new ListingActivity("Listing Activity", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.", 30);
+                    ListingActivity activity3 = new ListingActivity("Listing Activity", "This activity is designed to help you focus on the positive aspects of your life by encouraging you to list as many meaningful items as you can within a specific area.", 30);
                     activity3.Run();
                 }
                 else if (userInput == 4)
