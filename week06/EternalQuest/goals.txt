@@ -1,0 +1,4 @@
+0
+Baptism & Confirmation: Perform proxy baptisms and confirmations for ancestors. 50, 3, 500, 0
+EternalGoal: Study and Meditate on the Scriptures, Study for at least 10 minutes, 50
+SimpleGoal: Study Topic, Read 2 General Conference talks, 100, False
